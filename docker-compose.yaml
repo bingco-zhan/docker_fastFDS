@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  dfds:
+    build: env
+    image: centos7_fdfs
+    restart: always
+    container_name: fdfs
+    volumes:
+      - ./data/tracker:/data/tracker
+      - ./data/storage:/data/storage
+    environment:
+      tracker_server: 172.18.79.9
+      group_name: RookieReG1
+    network_mode: host
